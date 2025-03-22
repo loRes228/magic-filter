@@ -280,7 +280,7 @@ class MagicFilter:
         regexp_func = getattr(pattern, mode)
         return self._extend(FunctionOperation(regexp_func))
 
-    def func(self: MagicT, func: Callable[[Any], Any], *args: Any, **kwargs: Any) -> MagicT:
+    def func(self: MagicT, func: Callable[..., Any], *args: Any, **kwargs: Any) -> MagicT:
         return self._extend(FunctionOperation(func, *args, **kwargs))
 
     def cast(self: MagicT, func: Callable[[Any], Any]) -> MagicT:
