@@ -3,6 +3,8 @@ from typing import Any
 
 
 class BaseOperation(ABC):
+    __slots__ = ()
+
     important: bool = False
 
     @abstractmethod
